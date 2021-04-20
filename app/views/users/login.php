@@ -8,7 +8,7 @@
         <div class="card card-body bg-light">
         <h3 class="display-5 text-center">Login to your Account</h3>
         <p class="lead text-center">please fill your credentials to login</p>
-        <form class="register px-4" method="post" action="<?php echo APP_ROOT; ?>/users/login">
+        <form class="register px-4" method="post" action="<?php echo URL_ROOT; ?>/users/login">
             
             <div class="form-group">
                 <label for="email">Email: <sup>*</sup></label>
