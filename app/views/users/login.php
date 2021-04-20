@@ -6,6 +6,7 @@
         <div class="col-md-5 col-sm-9 mx-auto mt-5">
         
         <div class="card card-body bg-light">
+        <?php flash('register_success'); ?>
         <h3 class="display-5 text-center">Login to your Account</h3>
         <p class="lead text-center">please fill your credentials to login</p>
         <form class="register px-4" method="post" action="<?php echo URL_ROOT; ?>/users/login">
