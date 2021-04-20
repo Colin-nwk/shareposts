@@ -23,6 +23,20 @@ class User{
        }
 
     }
+    // login user
+    public function login($email, $password){
+        $this->db->query('SELECT * FROM users WHERE email = :email');
+        $this->db->bind(':email', $email);
+
+        $row = $this->db->singleResult();
+
+        $hashedPassword = $row->password;
+        if(password_verify($password, $hashedPassword)){
+            return $row;
+        }else {
+            return false;
+        }
+    }
 
     //find user by email
     public function findUserByEmail($email){
@@ -38,5 +52,7 @@ class User{
             return false;
         }
     }
+
+
 
 }
