@@ -9,13 +9,15 @@ class Pages extends Controller{
        
         $data = [
             'title' => 'SharePosts',
+            'description' => 'simple social network built on the custom PHP mvc framework'
         ];
 
         $this->view('pages/index', $data);
     }
     public function about(){
         $data = [
-            'title' => 'about us'
+            'title' => 'About us',
+            'description' => 'App to share posts with other users'
         ];
         $this->view('pages/about', $data);
     }
