@@ -7,7 +7,9 @@ require_once 'config/config.php';
 
 // require_once "libraries/core.php";
 // require_once "libraries/controller.php";
-// require_once "libraries/database.php";
+
+//load halpers
+require_once "helpers/url_helper.php";
 
 /**
  * for autoload to work in libraries the class name needs to match the file name -- exactly ie Controller - Controller
