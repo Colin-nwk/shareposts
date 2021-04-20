@@ -13,12 +13,21 @@
       <li class="nav-item">
         <a class="nav-link" href="<?php echo URL_ROOT; ?>/pages/about">About</a>
       </li>
+
+      <?php if(isset($_SESSION['user_id'])) : ?>
+        
+        <li class="nav-item ml-3">
+        <a class="btn btn-outline-dark" href="<?php echo URL_ROOT; ?>/users/logout">logout</a>
+      </li>
+
+      <?php else: ?>
       <li class="nav-item">
         <a class="nav-link" href="<?php echo URL_ROOT; ?>/users/login">Login</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?php echo URL_ROOT; ?>/users/register">Signup</a>
       </li>
+      <?php endif; ?>
      
     </ul>
   </div>
