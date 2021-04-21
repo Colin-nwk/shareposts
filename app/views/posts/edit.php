@@ -10,9 +10,9 @@
 			<a class="btn link active my-4" href="<?php echo URL_ROOT; ?>/posts"><i class="fas fa-backward"></i> back</a>
 			<div class="card card-body bg-light">
 
-				<h3 class="display-5 text-center">Add post</h3>
-				<p class="lead text-center">Create a post with this form</p>
-				<form class="register px-4" method="post" action="<?php echo URL_ROOT; ?>/posts/add" >
+				<h3 class="display-5 text-center">Edit Post</h3>
+				<p class="lead text-center">Edit an existing post</p>
+				<form class="register px-4" method="post" action="<?php echo URL_ROOT; ?>/posts/edit/<?php echo $data['id']; ?>" >
 
 					<div class="form-group">
 						<label for="title">Title: <sup>*</sup></label>
