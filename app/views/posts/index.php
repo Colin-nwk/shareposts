@@ -23,9 +23,7 @@
             <p class="card-text"><?php echo $post->body; ?></p>
             <a href="<?php echo URL_ROOT; ?>/posts/show/<?php echo $post->postId;?>" class="btn btn-dark">More</a>
         </div>
-    
     <?php endforeach; ?>
      </div>
-
-
+ 
 <?php require APP_ROOT .'/views/includes/footer.php'; ?>
