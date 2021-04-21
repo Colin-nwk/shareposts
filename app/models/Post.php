@@ -5,9 +5,9 @@ class Post{
 
   public function __construct(){
     $this->db = new Database;
-  }
+}
 
-  public function getPosts(){
+public function getPosts(){
     $this->db->query('SELECT *,
       posts.id as postId,
       users.id as userId,
@@ -24,9 +24,9 @@ class Post{
 
     return $results;
 
-  }
+}
 
-  public function addPost($data){
+public function addPost($data){
     $this->db->query('INSERT INTO posts ( title, body, user_id)VALUES ( :title, :body, :user_id)');
         // bind values
 
@@ -36,14 +36,14 @@ class Post{
 
        //execute
     if($this->db->execute()){
-     return true;
+       return true;
    }else{
-     return false;
+       return false;
    }
- }
+}
 
 
- public function updatePost($data){
+public function updatePost($data){
   $this->db->query('UPDATE posts SET title = :title, body = :body WHERE id = :id');
         // bind values
 
@@ -53,9 +53,9 @@ class Post{
 
        //execute
   if($this->db->execute()){
-   return true;
+     return true;
  }else{
-   return false;
+     return false;
  }
 }
 
@@ -69,5 +69,18 @@ public function getPostById($id){
 
   return $row;
 
+}
+public function deletePost($id){
+  $this->db->query('DELETE FROM posts WHERE id = :id ');
+      // bind values 
+
+  $this->db->bind(':id', $id);
+
+       //execute
+  if($this->db->execute()){
+     return true;
+ }else{
+     return false;
+ }
 }
 }

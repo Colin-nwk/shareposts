@@ -113,7 +113,7 @@ public function edit($id){
     }
 
 }else{
-    
+
         //get existing post from model
 
     $post = $this->postModel->getPostById($id);
@@ -148,4 +148,25 @@ public function show($id){
 
 }
 
-}
+public function delete($id){
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        // Get existing post from model
+        $post = $this->postModel->getPostById($id);
+        
+        // Check for owner
+        if($post->user_id != $_SESSION['user_id']){
+          redirect('posts');
+      }
+
+      if($this->postModel->deletePost($id) ){
+        flash('post_message', 'Post removed', 'alert alert-danger');
+        redirect('posts');
+    }else{
+       die('Something went wrong'); 
+   }
+        }else{
+        redirect('posts');
+    }
+   }
+
+  }

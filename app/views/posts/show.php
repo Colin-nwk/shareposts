@@ -19,7 +19,7 @@
     <hr>
     <a href="<?php echo URL_ROOT; ?>/posts/edit/<?php echo $data['post']->id; ?>" class="btn btn-dark"> <i class="fas fa-edit"></i>  Edit</a>
 
-    <form action="<?php echo URL_ROOT; ?>/posts/delete/<?php echo $data['post']->id; ?>" class="float-right">
+    <form action="<?php echo URL_ROOT; ?>/posts/delete/<?php echo $data['post']->id; ?>" class="float-right" method="post">
       <button type="submit" name="delete" class="btn btn-danger" value="delete">
         <i class="fas fa-times"></i>  Delete
       </button>

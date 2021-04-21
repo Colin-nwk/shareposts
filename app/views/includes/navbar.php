@@ -14,8 +14,13 @@
         <a class="nav-link" href="<?php echo URL_ROOT; ?>/pages/about">About</a>
       </li>
 
+       
+
       <?php if(isset($_SESSION['user_id'])) : ?>
-        
+           <li class="nav-item active">
+        <a class="nav-link " href="#">Welcome, <?php echo $_SESSION['user_name']; ?></a>
+          </li>
+
         <li class="nav-item ml-3">
         <a class="btn btn-outline-dark" href="<?php echo URL_ROOT; ?>/users/logout">logout</a>
       </li>
